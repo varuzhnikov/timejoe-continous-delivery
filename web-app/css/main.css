@@ -1,0 +1,418 @@
+ * {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font: 14px Helvetica, Arial, Verdana, sans-serif;
+	background: url(../images/bg_top.gif) repeat-x top center;
+	color: #3c4246;
+}
+
+h1 {
+	font-size: 21px;
+	font-weight: normal;
+	margin-bottom: 12px;
+}
+
+h2 {
+	font-size: 15px;
+	font-weight: normal;
+	margin-bottom: 2px;
+}
+
+p {
+	line-height: 18px;
+	margin-bottom: 12px;
+}
+
+p.big {
+	margin-top: -12px;
+	font-size: 15px;
+}
+
+#content ul {
+	margin-left: 20px;
+}
+
+a {
+	color: #63bffc;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.clearer {
+	clear: both;
+}
+
+/* ----- Page Elements ----- */
+
+#wrapper {
+	width: 900px;
+	padding: 0 5px;
+	margin: 0 auto;
+}
+
+#head {
+	width: 900px;
+	height: 66px;
+	position: relative;
+}
+
+#head #logo {
+	position: absolute;
+	bottom: 1px;
+	left: -4px;
+}
+
+#content {
+	padding: 40px 0;
+	min-height: 350px;
+}
+
+#footer {
+	color: #575d61;
+	margin-top: 20px;
+	padding: 3px 0;
+	border-top: 2px solid #b5c3cd;
+	font-size: 12px;
+	text-align: center;
+}
+
+#footer a {
+	color: #333;
+}
+
+#footer a:hover {
+	color: #63bffc;
+	text-decoration: none;
+}
+
+/* ----- Navigation ----- */
+
+#head #navigation {
+	position: absolute;
+	bottom: 5px;
+	right: 0;
+}
+
+#head #navigation li {
+	float: left;
+	margin-left: 15px;
+	list-style: none;
+}
+
+#head #navigation li.logout {
+	margin-left: 30px;
+}
+
+#head #navigation li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#head #navigation li a:hover,
+#head #navigation li.hit a {
+	border-bottom: 2px solid #63bffc;
+}
+
+#head #navigation li.logout a:hover {
+	border-bottom: 2px solid #ffa201;
+}
+
+#head #navigation #subnav {
+	position: absolute;
+	bottom: -24px;
+	padding-top: 12px;
+	right: 0;
+	margin: 0;
+	list-style: none;
+	display: none;
+	width: 550px;
+	text-align: right;
+	background: url(../images/bg_subnav.gif) repeat-x bottom left;
+}
+
+#head #navigation li:hover #subnav,
+#head #navigation li.hit #subnav {
+	display: block;
+}
+
+#head #navigation li.hit #subnav {
+	z-index: 10;
+}
+
+#head #navigation li:hover #subnav {
+	z-index: 20;
+}
+
+#head #navigation #subnav li {
+	display: inline-block;
+	float: none;
+	margin-left: 15px;
+	font-size: 12px;
+}
+
+#head #navigation #subnav li a {
+	color: #3c4246;
+	border-bottom: 0;
+}
+
+#head #navigation #subnav li a:hover,
+#head #navigation #subnav li.hit a {
+	color: #63bffc;
+	text-decoration: none;
+	border-bottom: 0;
+}
+
+/* ----- Content Elements ----- */
+
+.box {
+	padding: 20px;
+	padding-bottom: 10px;
+	border: 2px solid #b5c3cd;
+	margin-bottom: 40px;
+}
+
+.box.fullsize {
+	width: 856px;
+}
+
+.chart {
+	margin-bottom: 12px;
+}
+
+/* ----- Forms ----- */
+
+.field,
+.buttons {
+	clear: left;
+}
+
+.field label {
+	width: 150px;
+	display: block;
+	padding-top: 6px;
+	float: left;
+}
+	.field.autoWidthInputs label {
+		width: auto;
+		margin-right: 10px;
+	}
+
+.field input,
+.field select {
+	width: 230px;
+	border: 2px solid #b5c3cd;
+	padding: 5px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.field select {
+	padding: 4px 5px;
+}
+
+.field select option {
+	/*padding: 0 8px;*/
+}
+
+.field input#datepicker,
+.field input.datepicker {
+	width: 150px;
+}
+
+.field input.checkbox {
+	margin-top: 8px;
+	width: auto;
+}
+
+.field input:hover,
+.field input:focus,
+.field select:hover {
+	background-color: #e0e9f0;
+}
+
+.field.autoWidthInputs input {
+	width: 80px;
+}
+
+.buttons {
+	width: 394px;
+	height: 36px;
+	position: relative;
+}
+
+.buttons input {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+input.button {
+	margin-left: 10px;
+}
+
+.buttons input,
+input.button {
+	width: auto!important;
+	color: #fff;
+	padding: 5px 20px;
+	background: url(../images/bg_button.gif) repeat-x bottom left;
+	border: 0;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.buttons input:hover,
+.buttons input:focus,
+input.button:hover,
+input.button:focus {
+	background: url(../images/bg_button_over.gif) repeat-x bottom left;
+}
+
+input.textButton {
+	border: 0;
+	padding: 0;
+	background: transparent;
+	color: #63bffc;
+}
+
+input.textButton:hover,
+input.textButton:focus {
+	background: transparent;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* ----- List View / Tables ----- */
+
+.list table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.list table th {
+	border-bottom: 2px solid #b5c3cd;
+	text-align: left;
+	padding: 0 20px 4px 0;
+}
+
+.list table tfoot td {
+	border-top: 2px solid #b5c3cd;
+}
+
+.list table tfoot tr.hover td {
+	background: transparent;
+}
+
+.list table th.asc a, 
+.list table th.desc a {
+	display: block;
+    background-position: left;
+    padding-left: 10px;
+    background-repeat: no-repeat;
+}
+
+.list table th.asc a {
+    background-image: url(../images/skin/sorted_asc.gif);
+}
+
+.list table th.desc a {
+    background-image: url(../images/skin/sorted_desc.gif);
+}
+
+.list table td {
+	padding: 4px 20px 4px 0;
+}
+
+	.list table td table td {
+		padding: 0 20px 0 0;
+	}
+
+.list table .last {
+	padding-right: 0;
+}
+
+.list table .right {
+	text-align: right;
+}
+
+.list table tr.hover td {
+	background-color: #e0e9f0;
+}
+
+/* MESSAGES AND ERRORS */
+
+.error {
+	color: #cc0000;;
+}
+
+.message {
+    background: #f3f8fc url(../images/skin/information.png) 8px 50% no-repeat;
+    border: 1px solid #b2d1ff;
+    color: #006dba;
+    margin: 0 0 10px 0;
+    padding: 5px 5px 5px 30px
+}
+
+div.errors {
+    background: #fff3f3;
+    border: 1px solid red;
+    color: #cc0000;
+    margin: 0 0 10px 0;
+    padding: 5px;
+}
+div.errors ul {
+    list-style: none;
+    padding: 0;
+}
+div.errors li {
+	background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
+    line-height: 16px;
+    padding-left: 30px;
+}
+
+td.errors select {
+    border: 1px solid red;
+}
+td.errors input {
+    border: 1px solid red;
+}
+td.errors textarea {
+    border: 1px solid red;
+}
+
+/* PAGINATION */
+
+.paginateButtons {
+    border-top: 2px solid #b5c3cd;
+    font-size: 11px;
+    overflow: hidden;
+    padding: 10px 3px 10px 0;
+}
+.paginateButtons a,
+.paginateButtons span {
+    background: #fff;
+    border: 1px solid #b5c3cd;
+    color: #3c4246;
+    margin: 0 5px 0 0;
+    padding: 2px 6px;
+}
+.paginateButtons a:hover {
+	color: #3c4246;
+	background-color: #e0e9f0;
+	text-decoration: none;
+}
+.paginateButtons span {
+	background-color: #e0e9f0;
+}

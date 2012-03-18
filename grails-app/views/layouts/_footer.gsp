@@ -1,0 +1,1 @@
+<p><a href="http://www.timejoe.com" target="_blank">timejoe.com</a> Open Source Time Tracking . developed by <a href="http://www.eleon.de" target="_blank">eleon</a> . based on <a href="http://www.grails.org" target="_blank">Grails</a></p>
