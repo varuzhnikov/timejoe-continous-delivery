@@ -20,6 +20,7 @@ abstract class TimeEntry {
 	static mapping = {
 		cache true
 		sort start: "asc"
+		end column: "endDate"
 	}
 
     static constraints = {
