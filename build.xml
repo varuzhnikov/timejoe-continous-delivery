@@ -1,0 +1,40 @@
+<project name="Timejoe" default="integration" xmlns="">
+    
+    <property name="app.version" value="0.17.1"/>
+
+
+    <target name="integration" depends="test,build-war"/>
+
+
+    <target name="build-war">
+		<exec executable="grails" failonerror="false"  resultproperty="resultCode">
+            <arg value="war"/>
+        </exec>
+
+        <fail status="1" message="Some tests failed">
+           <condition>
+               <equals arg1="${resultCode}" arg2="1"/>
+           </condition>
+        </fail>
+    </target>
+
+<!-- ================================= 
+         target: test              
+        ================================= -->
+   <target name="test" description="--> Run a Grails applications unit and integration tests">
+    <exec executable="grails" failonerror="false"  resultproperty="resultCode">
+        <arg value="test-app"/>
+    </exec>
+       <zip basedir="target/test-reports/html" destfile="target/test-reports/testReports.zip"/>
+
+      <fail status="1" message="Some tests failed">
+           <condition>
+               <equals arg1="${resultCode}" arg2="1"/>
+           </condition>
+       </fail>
+   </target>
+
+
+    
+
+</project>
