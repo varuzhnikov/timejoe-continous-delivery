@@ -1,14 +1,15 @@
-<project name="Timejoe" default="integration" xmlns="">
-    
-    <property name="app.version" value="0.17.1"/>
+  <project name="Timejoe" default="integration" xmlns="">    
 
+    <property environment="env"/> 
+    <property name="war.file" value="timejoe.jar"/>
+    
+    <property name="deploy.dir" value="${env.CATALINA_HOME}/webapps"/>
 
     <target name="integration" depends="test,build-war"/>
 
-
     <target name="build-war">
-		<exec executable="grails" failonerror="false"  resultproperty="resultCode">
-            <arg value="war"/>
+		    <exec executable="grails" failonerror="false"  resultproperty="resultCode">
+            <arg value="war ${war.file}"/>
         </exec>
 
         <fail status="1" message="Some tests failed">
@@ -35,6 +36,10 @@
    </target>
 
 
+   <target name="deploy" description="--> deploy to production war file" depends="integration">
+	
+      <copy file="${war.file}" todir="${deploy.dir}"/>
+   </target>
     
 
 </project>
