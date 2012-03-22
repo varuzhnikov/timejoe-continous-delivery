@@ -1,7 +1,7 @@
   <project name="Timejoe" default="integration" xmlns="">    
 
     <property environment="env"/> 
-    <property name="war.file" value="timejoe.jar"/>
+    <property name="war.file" value="timejoe.war"/>
     
     <property name="deploy.dir" value="${env.CATALINA_HOME}/webapps"/>
 
