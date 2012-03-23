@@ -20,10 +20,13 @@ class BootStrap {
 		}
 		
 		environments {
-			development {
-				DummyData.cleanUpAndCreateDummyData()
-			}
-			production {
+            development {
+                DummyData.cleanUpAndCreateDummyData()
+            }
+            test {
+                DummyData.cleanUpAndCreateDummyData()
+            }
+            production {
 				if (!UserRole.findByRole(Role.findByAuthority("ROLE_USER_MANAGER"))) {
 					def admin = new User(username: 'admin@timejoe.com', enabled: true, password: 'password').save()
 					Role.list().each {
