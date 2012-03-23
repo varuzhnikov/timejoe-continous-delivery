@@ -91,19 +91,6 @@ log4j = {
 	info   'grails.app'
 }
 
-grails {
-	mail {
-	  host = "smtp.gmail.com"
-	  port = 465
-	  username = "timejoe.agile.days@gmail.com"
-	  password = "timejoe.agile.days"
-	  props = ["mail.smtp.auth":"true",
-			   "mail.smtp.socketFactory.port":"465",
-			   "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
-			   "mail.smtp.socketFactory.fallback":"false"]
-	}
- }
-
 //JQuery als AJAX Provider
 grails.views.javascript.library="jquery"
 

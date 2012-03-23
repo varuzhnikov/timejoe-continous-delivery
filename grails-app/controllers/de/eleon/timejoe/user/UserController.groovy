@@ -1,7 +1,5 @@
 package de.eleon.timejoe.user
 
-import org.springframework.mail.MailSender;
-
 import grails.plugins.springsecurity.Secured
 import org.apache.commons.logging.LogFactory
 
@@ -11,7 +9,6 @@ class UserController {
 
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 	static defaultAction = "list"
-	def  mailService
 
 	def list = {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
@@ -40,12 +37,6 @@ class UserController {
 				if (params["auth[" + it.id + "]"])
 					UserRole.create userInstance, it, true
 			}
-		}
-
-		mailService.sendMail {
-			to userInstance.username
-			subject "Hello Fred"
-			body 'How are you?'
 		}
 
 		render(view: "list", model: [userInstance: userInstance, userInstanceList: User.list(params), userInstanceTotal: User.count(), roleList: roleList])
