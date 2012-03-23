@@ -35,11 +35,4 @@
        </fail>
    </target>
 
-
-   <target name="deploy" description="--> deploy to production war file" depends="integration">
-	
-      <copy file="${war.file}" todir="${deploy.dir}"/>
-   </target>
-    
-
 </project>
