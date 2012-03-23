@@ -29,7 +29,7 @@ class UserController {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		def userInstance = new User(params)
 		
-		userInstance.enabled = true
+		userInstance.enabled = true - asd
 		
 		def roleList = Role.list()
 		println userInstance
