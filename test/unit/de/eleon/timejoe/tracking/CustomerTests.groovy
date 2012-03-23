@@ -27,7 +27,7 @@ class CustomerTests extends GrailsUnitTestCase {
 		
 		def customer1 = new Customer()
 		customer1.name = "Customer"
-		assertTrue "Validierung sollte erfolgreich sein.", customer1.validate()
+		assertFalse "Validierung sollte erfolgreich sein.", customer1.validate()
 		customer1.save()
 		
 		def customer2 = new Customer()
