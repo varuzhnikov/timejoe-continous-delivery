@@ -10,6 +10,8 @@ class UserController {
 	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 	static defaultAction = "list"
 
+    def mailService
+
 	def list = {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 
@@ -38,6 +40,12 @@ class UserController {
 					UserRole.create userInstance, it, true
 			}
 		}
+
+        mailService.sendMail {
+            to userInstance.username
+            subject "Hello, AgileDays"
+            body "Some text"
+        }
 
 		render(view: "list", model: [userInstance: userInstance, userInstanceList: User.list(params), userInstanceTotal: User.count(), roleList: roleList])
 	}
